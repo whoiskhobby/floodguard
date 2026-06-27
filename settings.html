@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings - Flood Guard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <nav class="top-nav">
+        <div class="nav-left">
+          <a class="nav-tab" href="index.html">Home</a>
+          <a class="nav-tab" href="flood-reports.html">Flood Photo Reports</a>
+          <a class="nav-tab" href="news.html">Flood News</a>
+          <a class="nav-tab" href="about.html">About the App</a>
+        </div>
+        <div class="top-right-menu">
+          <div class="quick-menu">
+            <button
+              id="top-menu-button"
+              class="menu-icon-btn"
+              type="button"
+              aria-expanded="false"
+              aria-controls="top-menu-dropdown"
+            >
+              ☰
+            </button>
+            <div id="top-menu-dropdown" class="menu-dropdown hidden" role="menu">
+              <a href="settings.html" role="menuitem" class="menu-item">Settings</a>
+              <a href="notifications.html" role="menuitem" class="menu-item">Notifications</a>
+              <a href="saved-alerts.html" role="menuitem" class="menu-item">Saved Alerts</a>
+              <a href="help-support.html" role="menuitem" class="menu-item">Help & Support</a>
+              <a href="about.html" role="menuitem" class="menu-item">About App</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <header class="hero">
+        <p class="eyebrow">Preferences</p>
+        <h1>Settings</h1>
+      </header>
+
+      <section class="media-report-panel">
+        <form class="report-form">
+          <label for="default-location">Default Location</label>
+          <input id="default-location" type="text" placeholder="e.g. Accra, Ghana" />
+
+          <label for="risk-mode">Risk Sensitivity</label>
+          <select id="risk-mode">
+            <option>Balanced</option>
+            <option>Conservative</option>
+            <option>Aggressive</option>
+          </select>
+
+          <label for="refresh-rate">Refresh Interval</label>
+          <select id="refresh-rate">
+            <option>Every 15 minutes</option>
+            <option>Every 30 minutes</option>
+            <option>Every 60 minutes</option>
+          </select>
+
+          <label><input type="checkbox" checked /> Use current location on app open</label>
+          <label><input type="checkbox" checked /> Save reports on this device</label>
+
+          <button type="button" class="btn btn-primary">Save Settings</button>
+        </form>
+      </section>
+    </main>
+    <script src="top-menu.js"></script>
+  </body>
+</html>
+
+

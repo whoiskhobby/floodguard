@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Help & Support - Flood Guard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <nav class="top-nav">
+        <div class="nav-left">
+          <a class="nav-tab" href="index.html">Home</a>
+          <a class="nav-tab" href="flood-reports.html">Flood Photo Reports</a>
+          <a class="nav-tab" href="news.html">Flood News</a>
+          <a class="nav-tab" href="about.html">About the App</a>
+        </div>
+        <div class="top-right-menu">
+          <div class="quick-menu">
+            <button id="top-menu-button" class="menu-icon-btn" type="button">☰</button>
+            <div id="top-menu-dropdown" class="menu-dropdown hidden" role="menu">
+              <a href="settings.html" role="menuitem" class="menu-item">Settings</a>
+              <a href="notifications.html" role="menuitem" class="menu-item">Notifications</a>
+              <a href="saved-alerts.html" role="menuitem" class="menu-item">Saved Alerts</a>
+              <a href="help-support.html" role="menuitem" class="menu-item">Help & Support</a>
+              <a href="about.html" role="menuitem" class="menu-item">About App</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <header class="hero">
+        <p class="eyebrow">Support</p>
+        <h1>Help & Support</h1>
+      </header>
+
+      <section class="media-report-panel">
+        <h3>Quick Help</h3>
+        <ul>
+          <li>If current location fails, run app on `http://localhost` and allow location access.</li>
+          <li>If a place is not found, try adding district or nearby landmark.</li>
+          <li>Use Flood Photo Reports to submit visual flood evidence.</li>
+        </ul>
+      </section>
+
+      <section class="photo-list-panel">
+        <h3>Safety by Risk Level</h3>
+        <div class="report-list">
+          <article class="report-item">
+            <p class="report-headline">High Flood Risk</p>
+            <p class="report-body">Move to higher ground, avoid driving, and call emergency numbers immediately when needed.</p>
+          </article>
+          <article class="report-item">
+            <p class="report-headline">Moderate Flood Risk</p>
+            <p class="report-body">Prepare evacuation items, monitor alerts, and avoid vulnerable routes.</p>
+          </article>
+          <article class="report-item">
+            <p class="report-headline">Low Flood Risk</p>
+            <p class="report-body">Continue routine monitoring and report blocked drains or rising water early.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+    <script src="top-menu.js"></script>
+  </body>
+</html>
+
+

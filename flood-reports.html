@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flood Photo Reports - Ghana</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <nav class="top-nav">
+        <div class="nav-left">
+          <a class="nav-tab" href="index.html">Home</a>
+          <a class="nav-tab active" href="flood-reports.html">Flood Photo Reports</a>
+          <a class="nav-tab" href="news.html">Flood News</a>
+          <a class="nav-tab" href="about.html">About the App</a>
+        </div>
+        <div class="top-right-menu">
+          <div class="quick-menu">
+            <button
+              id="top-menu-button"
+              class="menu-icon-btn"
+              type="button"
+              aria-expanded="false"
+              aria-controls="top-menu-dropdown"
+              title="Open quick options"
+            >
+              ☰
+            </button>
+            <div id="top-menu-dropdown" class="menu-dropdown hidden" role="menu">
+              <a href="settings.html" role="menuitem" class="menu-item">Settings</a>
+              <a href="notifications.html" role="menuitem" class="menu-item">Notifications</a>
+              <a href="saved-alerts.html" role="menuitem" class="menu-item">Saved Alerts</a>
+              <a href="help-support.html" role="menuitem" class="menu-item">Help & Support</a>
+              <a href="about.html" role="menuitem" class="menu-item">About App</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <header class="hero">
+        <p class="eyebrow">Community Flood Reports</p>
+        <h1>Upload Flood Incidence Images</h1>
+        <p class="subtext">
+          Take a photo or upload an image, add a Ghana location, and we will map
+          the report for future monitoring.
+        </p>
+      </header>
+
+      <section class="media-report-panel">
+        <form id="photo-report-form" class="report-form">
+          <label for="flood-image">Flood Image</label>
+          <input
+            id="flood-image"
+            name="floodImage"
+            type="file"
+            accept="image/*"
+            capture="environment"
+            required
+          />
+          <div class="camera-tools">
+            <button type="button" id="start-camera-btn" class="btn btn-secondary btn-small">
+              Take Photo
+            </button>
+            <button
+              type="button"
+              id="capture-photo-btn"
+              class="btn btn-primary btn-small hidden"
+            >
+              Capture
+            </button>
+            <button
+              type="button"
+              id="stop-camera-btn"
+              class="btn btn-secondary btn-small hidden"
+            >
+              Stop Camera
+            </button>
+          </div>
+          <video id="camera-preview" class="camera-preview hidden" autoplay playsinline></video>
+          <canvas id="camera-canvas" class="hidden"></canvas>
+          <img id="captured-photo-preview" class="captured-photo-preview hidden" alt="Captured flood photo preview" />
+
+          <label for="flood-location">Location in Ghana</label>
+          <input
+            id="flood-location"
+            name="floodLocation"
+            type="text"
+            placeholder="e.g. Circle, Accra or Aboabo, Kumasi"
+            required
+          />
+
+          <label for="flood-note">Short Note (Optional)</label>
+          <textarea
+            id="flood-note"
+            name="floodNote"
+            rows="3"
+            placeholder="Road blocked, homes flooded, drains overflowing..."
+          ></textarea>
+
+          <button type="submit" class="btn btn-primary">Save Flood Photo Report</button>
+        </form>
+        <p id="photo-report-status" class="geo-status"></p>
+      </section>
+
+      <section class="photo-map-panel">
+        <h3>Mapped Flood Photo Reports</h3>
+        <div id="photo-report-map"></div>
+      </section>
+
+      <section class="photo-list-panel">
+        <h3>Saved Photo Reports</h3>
+        <div id="photo-report-list" class="photo-report-list"></div>
+      </section>
+    </main>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="top-menu.js"></script>
+    <script src="flood-reports.js"></script>
+  </body>
+</html>
+
+

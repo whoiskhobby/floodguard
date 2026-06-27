@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saved Alerts - Flood Guard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <nav class="top-nav">
+        <div class="nav-left">
+          <a class="nav-tab" href="index.html">Home</a>
+          <a class="nav-tab" href="flood-reports.html">Flood Photo Reports</a>
+          <a class="nav-tab" href="news.html">Flood News</a>
+          <a class="nav-tab" href="about.html">About the App</a>
+        </div>
+        <div class="top-right-menu">
+          <div class="quick-menu">
+            <button id="top-menu-button" class="menu-icon-btn" type="button">☰</button>
+            <div id="top-menu-dropdown" class="menu-dropdown hidden" role="menu">
+              <a href="settings.html" role="menuitem" class="menu-item">Settings</a>
+              <a href="notifications.html" role="menuitem" class="menu-item">Notifications</a>
+              <a href="saved-alerts.html" role="menuitem" class="menu-item">Saved Alerts</a>
+              <a href="help-support.html" role="menuitem" class="menu-item">Help & Support</a>
+              <a href="about.html" role="menuitem" class="menu-item">About App</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <header class="hero">
+        <p class="eyebrow">Watchlist</p>
+        <h1>Saved Alerts</h1>
+      </header>
+
+      <section class="photo-list-panel">
+        <h3>Watched Locations</h3>
+        <div class="report-list">
+          <article class="hotspot-item">
+            <div>
+              <p class="hotspot-name">Accra - Odaw Basin</p>
+              <p class="hotspot-meta">Last update: 9 min ago</p>
+            </div>
+            <div>
+              <span class="risk-badge high">High Flood Risk</span>
+            </div>
+          </article>
+          <article class="hotspot-item">
+            <div>
+              <p class="hotspot-name">Aboabo, Kumasi</p>
+              <p class="hotspot-meta">Last update: 15 min ago</p>
+            </div>
+            <div>
+              <span class="risk-badge medium">Moderate Flood Risk</span>
+            </div>
+          </article>
+          <article class="hotspot-item">
+            <div>
+              <p class="hotspot-name">Keta</p>
+              <p class="hotspot-meta">Last update: 22 min ago</p>
+            </div>
+            <div>
+              <span class="risk-badge high">High Flood Risk</span>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+    <script src="top-menu.js"></script>
+  </body>
+</html>
+
+

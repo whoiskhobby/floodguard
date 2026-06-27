@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About - Flood Guard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <nav class="top-nav">
+        <div class="nav-left">
+          <a class="nav-tab" href="index.html">Home</a>
+          <a class="nav-tab" href="flood-reports.html">Flood Photo Reports</a>
+          <a class="nav-tab" href="news.html">Flood News</a>
+          <a class="nav-tab active" href="about.html">About the App</a>
+        </div>
+        <div class="top-right-menu">
+          <div class="quick-menu">
+            <button id="top-menu-button" class="menu-icon-btn" type="button">☰</button>
+            <div id="top-menu-dropdown" class="menu-dropdown hidden" role="menu">
+              <a href="settings.html" role="menuitem" class="menu-item">Settings</a>
+              <a href="notifications.html" role="menuitem" class="menu-item">Notifications</a>
+              <a href="saved-alerts.html" role="menuitem" class="menu-item">Saved Alerts</a>
+              <a href="help-support.html" role="menuitem" class="menu-item">Help & Support</a>
+              <a href="about.html" role="menuitem" class="menu-item">About App</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <header class="hero">
+        <p class="eyebrow">App Information</p>
+        <h1>About This App</h1>
+      </header>
+
+      <section class="media-report-panel">
+        <h3>Purpose</h3>
+        <p class="subtext">
+          This app helps communities in Ghana monitor flood risk, report incidents,
+          and visualize flood-prone hotspots for awareness and preparedness.
+        </p>
+        <p class="subtext">
+          Created by "Nketia Derrick Franz, Addai Enoch Wiafe, and Vinod".
+        </p>
+      </section>
+
+      <section class="photo-list-panel">
+        <h3>Data Sources</h3>
+        <div class="report-list">
+          <article class="report-item">
+            <p class="report-headline">Forecast & Historical Weather</p>
+            <p class="report-body">Open-Meteo APIs (forecast, archive, geocoding).</p>
+          </article>
+          <article class="report-item">
+            <p class="report-headline">Maps & Geospatial Display</p>
+            <p class="report-body">Leaflet + OpenStreetMap.</p>
+          </article>
+          <article class="report-item">
+            <p class="report-headline">Coverage</p>
+            <p class="report-body">Ghana-focused flood monitoring and reporting.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="media-report-panel">
+        <h3>Disclaimer</h3>
+        <p class="subtext">
+          This platform provides risk estimates and community reports. It is not an
+          official emergency warning system. Always follow NADMO, Police, and local
+          authorities for life-safety decisions.
+        </p>
+      </section>
+    </main>
+    <script src="top-menu.js"></script>
+  </body>
+</html>
+
+

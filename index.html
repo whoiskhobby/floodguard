@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flood Guard</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <nav class="top-nav">
+        <div class="nav-left">
+          <a class="nav-tab active" href="index.html">Home</a>
+          <a class="nav-tab" href="flood-reports.html">Flood Photo Reports</a>
+          <a class="nav-tab" href="news.html">Flood News</a>
+          <a class="nav-tab" href="about.html">About the App</a>
+        </div>
+        <div class="top-right-menu">
+          <div class="quick-menu">
+            <button
+              id="top-menu-button"
+              class="menu-icon-btn"
+              type="button"
+              aria-expanded="false"
+              aria-controls="top-menu-dropdown"
+              title="Open quick options"
+            >
+              ☰
+            </button>
+            <div id="top-menu-dropdown" class="menu-dropdown hidden" role="menu">
+              <a href="settings.html" role="menuitem" class="menu-item">Settings</a>
+              <a href="notifications.html" role="menuitem" class="menu-item">Notifications</a>
+              <a href="saved-alerts.html" role="menuitem" class="menu-item">Saved Alerts</a>
+              <a href="help-support.html" role="menuitem" class="menu-item">Help & Support</a>
+              <a href="about.html" role="menuitem" class="menu-item">About App</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <header class="hero">
+        <p class="eyebrow">Flood Guard</p>
+        <h1>Flood Guard</h1>
+        <p class="subtext">
+          Check flood risk across Ghana using location search or your current
+          position.
+        </p>
+      </header>
+
+      <section class="search-panel">
+        <form id="risk-form" class="search-form">
+          <label for="location-input">Location in Ghana</label>
+          <div class="input-row">
+            <input
+              id="location-input"
+              name="location"
+              type="text"
+              placeholder="e.g. Accra, Kumasi, Tamale"
+              required
+            />
+            <button type="submit" class="btn btn-primary">Check Risk</button>
+            <button
+              type="button"
+              id="current-location-btn"
+              class="btn btn-secondary"
+            >
+              Use Current Location
+            </button>
+          </div>
+          <p id="geo-status" class="geo-status"></p>
+        </form>
+      </section>
+
+      <section id="result" class="alert-card hidden" aria-live="polite">
+        <div class="alert-icon">!</div>
+        <div class="alert-content">
+          <p class="alert-level" id="alert-level">Imminent Threat Alert</p>
+          <h2 id="alert-title">High Flood Risk</h2>
+          <p id="alert-message"></p>
+          <div class="metrics" id="metrics"></div>
+        </div>
+      </section>
+
+      <div class="top-panels">
+        <section class="hotspot-panel">
+          <div class="panel-header">
+            <h3>Currently Flood-Prone Areas (Ghana)</h3>
+            <button
+              type="button"
+              id="refresh-hotspots-btn"
+              class="btn btn-secondary btn-small"
+            >
+              Refresh List
+            </button>
+          </div>
+          <p id="hotspot-status" class="geo-status"></p>
+          <p class="resize-hint">Drag the list corner to resize.</p>
+          <div id="hotspot-list" class="hotspot-list"></div>
+          <button
+            type="button"
+            id="view-more-hotspots-btn"
+            class="btn btn-secondary btn-small hidden"
+          >
+            View More Locations
+          </button>
+        </section>
+
+        <section class="map-panel">
+          <h3>Interactive Ghana Map</h3>
+          <div id="ghana-map" title="Ghana map"></div>
+          <div class="map-risk-legend">
+            <span class="legend-item"><i class="legend-dot high"></i> High risk</span>
+            <span class="legend-item"
+              ><i class="legend-dot medium"></i> Moderate risk</span
+            >
+            <span class="legend-item"><i class="legend-dot low"></i> Low risk</span>
+          </div>
+          <section class="report-panel">
+            <h4>Report Flood Incidence</h4>
+            <form id="flood-report-form" class="report-form">
+              <label for="report-location">Location</label>
+              <input
+                id="report-location"
+                name="reportLocation"
+                type="text"
+                placeholder="e.g. Adabraka, Accra"
+                required
+              />
+              <label for="report-message">What are you seeing?</label>
+              <textarea
+                id="report-message"
+                name="reportMessage"
+                rows="3"
+                placeholder="Describe the flood situation, road condition, or blocked drainage."
+                required
+              ></textarea>
+              <button type="submit" class="btn btn-primary btn-small">
+                Submit Report
+              </button>
+            </form>
+            <p id="report-status" class="geo-status"></p>
+            <div id="report-list" class="report-list"></div>
+            <button
+              type="button"
+              id="view-more-reports-btn"
+              class="btn btn-secondary btn-small hidden"
+            >
+              View More Reports
+            </button>
+          </section>
+        </section>
+      </div>
+
+      <section class="tips">
+        <h3>Flood Guard Safety Tips</h3>
+        <ul>
+          <li>Do not cross flooded roads or streams.</li>
+          <li>Keep NADMO and local district emergency contacts ready.</li>
+          <li>Move valuables and documents to elevated safe areas.</li>
+        </ul>
+        <div class="emergency-mini">
+          <p class="emergency-mini-title">Emergency Contacts</p>
+          <div class="emergency-mini-actions">
+            <a class="btn btn-primary btn-small" href="tel:191">Police 191</a>
+            <a class="btn btn-secondary btn-small" href="tel:18555">Police 18555</a>
+            <a class="btn btn-secondary btn-small" href="tel:112">NADMO 112</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="top-menu.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
+
+
